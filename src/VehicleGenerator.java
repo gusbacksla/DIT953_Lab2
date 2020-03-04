@@ -19,6 +19,16 @@ public class VehicleGenerator implements IVehicleGenerator{
         return null;
     }
 
+    @Override
+    public IVehicle getVehicle(String type) {
+        switch (type){
+            case ("Saab95") : { return getSaab95();}
+            case ("Volvo240") : { return getVolvo240();}
+            case ("Scania") : { return getScania();}
+        }
+        return null;
+    }
+
     private Saab95 getSaab95(){
         return new Saab95(5, Color.RED, rand.nextInt(125) + 125, "Saab95");
     }

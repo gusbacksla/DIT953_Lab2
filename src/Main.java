@@ -14,8 +14,6 @@ public class Main {
         vehicles.add(saab);
         vehicles.add(scania);
 
-
         final Controller controller = new Controller(vehicles);
-        controller.start();
     }
 }

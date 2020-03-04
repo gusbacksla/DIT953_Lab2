@@ -10,10 +10,10 @@ public class GUI extends JFrame implements UI {
 
     private ArrayList<IUIListener> listeners = new ArrayList<>();
 
-    private static final int X = 900;
-    private static final int Y = 840;
+    private final int X;
+    private final int Y;
 
-    private final DrawPanel drawPanel = new DrawPanel(X, Y - 240);
+    private final DrawPanel drawPanel;
 
     private final JPanel controlPanel = new JPanel();
 
@@ -38,7 +38,10 @@ public class GUI extends JFrame implements UI {
     private final JButton newUIButton = new JButton("Reset UI");
 
 
-    public GUI(ArrayList<IVehicle> vehicles, String title) throws IOException {
+    public GUI(ArrayList<IVehicle> vehicles, int x, int y, String title) throws IOException {
+        X = x;
+        Y = y;
+         drawPanel = new DrawPanel(X, Y - 240);
         this.vehicles = vehicles;
         initComponents(title);
         addCarsToPanel();
